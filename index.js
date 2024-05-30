@@ -1,9 +1,10 @@
-
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const app = express();
 
 app.use(bodyParser.json());
+app.use(cors()); // Add CORS support
 
 app.post('/pixel', (req, res) => {
   const event = req.body;
@@ -14,7 +15,7 @@ app.post('/pixel', (req, res) => {
 
 app.get('/', (req, res) => {
     res.send('Hello World! backend working');
-  });
+});
 
 app.listen(3000, () => {
   console.log('Pixel server listening on port 3000');
