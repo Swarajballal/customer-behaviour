@@ -12,6 +12,10 @@ app.post('/pixel', (req, res) => {
   res.status(200).send('Event received');
 });
 
+app.get('/', (req, res) => {
+    res.send('Hello World! backend working');
+  });
+
 app.listen(3000, () => {
   console.log('Pixel server listening on port 3000');
 });
